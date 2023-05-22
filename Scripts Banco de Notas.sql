@@ -27,8 +27,7 @@ INSERT INTO Pessoa (id_Pessoa, nome)
 	(20, 'Evaristo'), 
 	(21, 'Giovanna'), 
 	(22, 'Douglas'); 
-----------------------------------------------------------------------------
-	
+-- ------------------------------------------------------------------------	
 CREATE TABLE Alunos (
 	id_aluno INT PRIMARY KEY NOT NULL,
 	id_Pessoa INT NOT NULL,
@@ -53,7 +52,7 @@ INSERT INTO Alunos (id_aluno, id_pessoa, id_turma, matricula)
 	(10, 17, 4, '00232330'),
 	(11, 18, 4, '00232330'),
 	(12, 19, 5, '00012312'),
-----------------------------------------------------------------------------
+-- ------------------------------------------------------------------------
 
 CREATE TABLE Professor(	
 	id_professor INT PRIMARY KEY NOT NULL,
@@ -73,7 +72,7 @@ INSERT INTO Professor (id_professor, id_pessoa, id_disciplina)
 	(8,  22, 10),
 	(9,  5,  9),
 	(10, 14, 11);
-----------------------------------------------------------------------------
+-- ------------------------------------------------------------------------
 
 CREATE TABLE Disciplina (
 	id_disciplina INT PRIMARY KEY NOT NULL,
@@ -97,7 +96,7 @@ INSERT INTO Disciplina (id_disciplina, descricao, id_professor, id_periodo)
 	(9,  'Legislação Aplicada a Tecnologia da Informação', 9, 5),
 	(10, 'Arquitetura e Organização de Computadores', 8, 5),
 	(11, 'Relações Sociais e Cidadania', 10, 5);
-----------------------------------------------------------------------------
+-- ------------------------------------------------------------------------
 
 CREATE TABLE Periodo(
 	id_periodo INT PRIMARY KEY NOT NULL,
@@ -111,7 +110,7 @@ INSERT INTO Periodo (id_periodo, descricao)
 	(3, '3º Periodo'),
 	(4, '4º Periodo'),
 	(5, '5º Periodo');
-----------------------------------------------------------------------------
+-- ------------------------------------------------------------------------
 
 CREATE TABLE Turma(
 	id_turma INT PRIMARY KEY NOT NULL,
@@ -126,7 +125,7 @@ INSERT INTO Turma (id_turma, descricao)
 	(4, '2 ano B');
 	(5, '3 ano A');
 	(6, '3 ano B');
-----------------------------------------------------------------------------
+-- ------------------------------------------------------------------------
 
 CREATE TABLE Notas(
 	id_nota PRIMARY KEY NOT NULL,
@@ -146,7 +145,7 @@ INSERT INTO Notas (id_nota, nota, id_disciplina, id_aluno)
 	(3, 40.0,  1, 3),
 	(4, 10.5,  2, 5),
 	(5, 60.0,  5, 4);
-----------------------------------------------------------------------------
+-- ------------------------------------------------------------------------
 
 CREATE TABLE Recuperacao(
 	id_recuperacao int PRIMARY KEY NOT NULL,
@@ -154,7 +153,7 @@ CREATE TABLE Recuperacao(
 	id_disciplina int,
 	id_nota int,
 	data TIMESTAMP(6),
-	CONSTRAINT fk_idaluno FOREIGN KEY(id_aluno) REFERENCES Aluno (id_aluno),
+	CONSTRAINT fk_idaluno FOREIGN KEY(id_aluno) REFERENCES Alunos (id_aluno),
 	CONSTRAINT fk_iddisciplina FOREIGN KEY(id_disciplina) REFERENCES Disciplina (id_disciplina),
 	CONSTRAINT fk_idnota FOREIGN KEY (id_nota) REFERENCES Nota(id_nota)
 );
