@@ -44,8 +44,7 @@ CREATE TABLE Alunos (
 	id_turma INT NOT NULL,
 	matricula VARCHAR(8) NOT NULL,
 	CONSTRAINT fk_idpessoa FOREIGN KEY (id_Pessoa) REFERENCES Pessoa (id_Pessoa),
-	CONSTRAINT fk_idturma FOREIGN KEY (id_turma) REFERENCES Turma (id_turma),
-	CONSTRAINT fk_idmatricula FOREIGN KEY (id_matricula) REFERENCES Matricula (id_matricula)
+	CONSTRAINT fk_idturma FOREIGN KEY (id_turma) REFERENCES Turma (id_turma)
 );
 
 -- --------------------------------------------------------------------------
