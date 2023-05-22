@@ -15,7 +15,7 @@ CREATE TABLE Periodo(
 CREATE TABLE Professor(	
 	id_professor INT PRIMARY KEY NOT NULL,
 	id_pessoa INT NOT NULL,
-	id_disciplina varchar (50) NOT NULL
+	id_disciplina INT NOT NULL
 );
 
 -- --------------------------------------------------------------------------
